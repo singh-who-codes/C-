@@ -22,7 +22,7 @@ int binarySearch(int arr[], int l, int r, int x)
   
         // Else the element can only be present 
         // in right subarray 
-        return binarySearch(arr, mid , r, x); 
+        return binarySearch(arr, mid + 1 , r, x); 
     } 
   
     // We reach here when element is not 
@@ -31,9 +31,14 @@ int binarySearch(int arr[], int l, int r, int x)
 } 
   
 int main(void) 
-{ 
-    int arr[] = { 2, 3, 4, 10, 40 }; 
-    int x = 10; 
+{  
+    int x;
+    cin>>x;
+    int arr[x];
+    for(int i=0;i<x;i++)
+    {
+      cin>>arr[i];
+    }
     int n = sizeof(arr) / sizeof(arr[0]); 
     int result = binarySearch(arr, 0, n - 1, x); 
     (result == -1) ? cout << "Element is not present in array"
